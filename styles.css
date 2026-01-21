@@ -1425,6 +1425,19 @@ section {
     color: rgba(255, 255, 255, 0.5);
 }
 
+.powered-by a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.powered-by a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .powered-by img {
     height: 20px;
     width: auto;
