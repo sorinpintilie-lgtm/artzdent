@@ -1,0 +1,18 @@
+# Node modules
+node_modules/
+
+# Compression scripts
+compress-images.js
+compress-videos.js
+
+# Compressed directories
+compressed/
+compressed-videos/
+
+# Large video files
+*.mov
+*.mp4
+
+# Original uncompressed files
+*.jpg
+*.png
