@@ -337,9 +337,12 @@ body {
     padding: 1.5rem 0;
 }
 
-.logo img {
-    height: 50px;
-    width: auto;
+.logo-text {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    letter-spacing: -0.5px;
 }
 
 .nav-menu {
