@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.scrollLeft += e.deltaY;
     });
 
-    // Navbar Scroll Effect
+    // Navbar Scroll Effect - Hide on scroll down, show on scroll up
     let lastScroll = 0;
     const navbar = document.querySelector('.navbar');
 
@@ -152,6 +152,15 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
         } else {
             navbar.style.boxShadow = 'none';
+        }
+
+        // Hide/show navbar based on scroll direction
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // Scrolling down - hide navbar
+            navbar.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up - show navbar
+            navbar.style.transform = 'translateY(0)';
         }
 
         lastScroll = currentScroll;
