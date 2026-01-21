@@ -16,3 +16,5 @@ compressed-videos/
 # Original uncompressed files
 *.jpg
 *.png
+!*compressed.jpg
+!*compressed.png
