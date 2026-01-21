@@ -28,6 +28,12 @@
     --bg-opacity-wash: 0.04;
     --bg-blur-radius: 100px;
     --bg-animation-duration: 12s;
+    
+    /* Top Promo Bar Variables */
+    --promo-bar-height: 40px;
+    --promo-bar-bg: #F2B94B;
+    --promo-bar-text: #1F2933;
+    --promo-bar-cta: #2F80ED;
 }
 
 html {
@@ -41,6 +47,7 @@ body {
     color: var(--color-text);
     background-color: var(--color-background);
     overflow-x: hidden;
+    padding-top: var(--promo-bar-height);
 }
 
 /* Background System */
@@ -239,10 +246,80 @@ body {
     padding: 0 2rem;
 }
 
+/* Top Promo Bar */
+.top-promo-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--promo-bar-height);
+    background-color: var(--promo-bar-bg);
+    color: var(--promo-bar-text);
+    font-size: 14px;
+    font-weight: 400;
+    z-index: 2000;
+    border-bottom: 1px solid rgba(242, 185, 75, 0.2);
+    padding: 0 env(safe-area-inset-top);
+}
+
+.promo-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.promo-left, .promo-center, .promo-right {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.promo-left {
+    flex: 1;
+    min-width: 0;
+}
+
+.promo-center {
+    flex: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.promo-right {
+    flex: 1;
+    text-align: right;
+}
+
+.promo-link {
+    color: var(--promo-bar-text);
+    text-decoration: none;
+    margin-left: 1rem;
+}
+
+.promo-link:hover {
+    text-decoration: underline;
+}
+
+.promo-cta {
+    margin-left: 1rem;
+}
+
+.promo-cta .btn-primary {
+    background-color: var(--promo-bar-cta);
+    color: white;
+    padding: 0.25rem 1rem;
+    font-size: 12px;
+    font-weight: 400;
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
-    top: 0;
+    top: var(--promo-bar-height);
     left: 0;
     right: 0;
     background-color: rgba(255, 255, 255, 0.95);
@@ -488,6 +565,11 @@ body {
     transition: var(--transition);
     cursor: pointer;
     border: none;
+}
+
+.btn-sm {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
 }
 
 .btn-primary {
@@ -1391,6 +1473,32 @@ section {
 
     .process-step:not(:last-child)::after {
         display: none;
+    }
+
+    /* Mobile Promo Bar */
+    .promo-content {
+        justify-content: space-between;
+    }
+
+    .promo-left {
+        text-align: left;
+    }
+
+    .promo-center {
+        text-align: center;
+        flex: 2;
+    }
+
+    .promo-right {
+        text-align: right;
+    }
+
+    .promo-cta {
+        display: none;
+    }
+
+    .promo-right {
+        white-space: nowrap;
     }
 
     /* Services Bento Layout Responsive */
